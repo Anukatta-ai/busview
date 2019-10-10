@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 <html>
 <head>
@@ -14,15 +14,7 @@
 <th>Destination</th>
 <th>Seats Availability</th>
 </tr>
-<c:forEach var="bus" items="${busDetails}">
-<tr>
-<td align="center">${bus.busid}</td>
-<td align="center">${bus.bustravelname}</td>
-<td align="center">${bus.source}</td>
-<td align="center">${bus.destination}</td>
-<td align="center">${bus.availableseats}</td>
-</tr>
-</c:forEach>
+
 </table>
 </body>
 </html>
