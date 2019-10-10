@@ -43,6 +43,22 @@
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
+	    <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <descriptor>src/assembly/dep.xml</descriptor>
+        </configuration>
+        <executions>
+          <execution>
+            <id>create-archive</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
@@ -61,34 +77,4 @@
       </plugin>
     </plugins>
   </build>
-	 <pluginRepositories>
-          <pluginRepository>
-            <id>sonatype-forge</id>
-            <name>Sonatype Forge</name>
-            <url>http://pluginRepository.sonatype.org/content/groups/public</url>
-            <snapshots>
-              <enabled>true</enabled>
-            </snapshots>
-          </pluginRepository>
-		<pluginRepository>
-		  <id>Codehaus Snapshots</id>
-		  <url>http://snapshots.pluginRepository.codehaus.org</url>
-		  <snapshots>
-			<enabled>true</enabled>
-		  </snapshots>
-		  <releases>
-			<enabled>false</enabled>
-		  </releases>
-		</pluginRepository>
-	<pluginRepository>
-	  <id>Central</id>
-	  <url>http://repo1.maven.org/maven2</url>
-	  <snapshots>
-		<enabled>true</enabled>
-	  </snapshots>
-	  <releases>
-		<enabled>true</enabled>
-	  </releases>
-	</pluginRepository>
-        </pluginRepositories>
 </project>
